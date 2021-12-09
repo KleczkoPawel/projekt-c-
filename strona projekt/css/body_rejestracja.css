@@ -1,0 +1,90 @@
+body{
+    background-color:rgba(240, 240, 240, 0.753);
+}
+#container{
+    margin-top:70px;
+    width:1000px;
+    height:650px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#header{
+    width:1000x;
+    height:80px;
+    padding:20px;
+    
+}
+#logo{
+    width:600px;
+    height:15px;
+    padding:20px;
+    float:left;
+    text-align:center;
+    font-weight:bold;
+    font-size:30px;
+    margin-top:20px;
+    color:rgb(0, 0, 0);
+    
+}
+#clock{
+    width:200px;
+    height:15px;
+    padding:20px;
+    float:left;
+    margin-left:80%;
+    text-align: center;
+    font-weight:bold;
+    font-size:40px;
+    margin-top:20px;
+    color:black;
+}
+#mid{
+
+    width:600px ;
+    height:400px;
+    margin-top:120px;
+    
+}
+
+#title{
+    float:left;
+    border:solid black;
+    width:185px;
+    height:80px;
+    margin:15px;
+    background-color: rgb(18, 174, 39);
+}
+
+#footer{
+    padding:15px;
+    float:left;
+    margin:15px;
+    width:935px;
+    height:40px;
+    font-size:30px;
+    text-align: center;
+    color:whitesmoke
+}
+#button_zaloguj{
+    margin-left: 50px;
+    width: 120px;
+    height: 30px;
+    float: left;
+}
+
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: rgba(219, 219, 219, 0.829);
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: rgb(192, 192, 192);
+    outline: none;
+  }
+  .text-log{
+      font-size: 20px;
+  }

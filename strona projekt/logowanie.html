@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet"; href="css\body_logowanie.css"; type="text/css" />
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div id="logo">
+           ZALOGUJ SIĘ I SPRAWDŹ NASZĄ OFERTĘ
+        </div>
+        <div id="clock">
+
+        </div>
+
+    </div>
+
+    <div id="mid">
+        <form action="wysylamy_w_pizdu.cpp">
+            <div id="div_logowanie">
+              <h1>Logowanie</h1>
+              <hr>
+          
+              <label for="email" class="text-log"><b>E-mail</b></label>
+                <br>
+              <input type="text" placeholder="Wprowadź adres e-mail" name="email" id="email" required>
+              <hr>
+              <label for="psw" class="text-log"><b>Hasło</b></label>
+               <br>
+              <input type="password" placeholder="Wprowadź hasło" name="psw" id="psw" required>
+              <hr>
+              <br>
+              <button type="submit" id="button_zaloguj">Zaloguj</button>
+            </div>
+        
+          </form>
+          <a href="rejestracja.html" ><button id="button_zaloguj">Zarejestruj się</button></a>
+    </div>
+
+    <div id="footer">
+
+    </div>
+</div>
+
+<script>
+    function czas() {
+        d = new Date();
+        sekundy = d.getSeconds();
+        godziny = d.getHours();
+        minuty = d.getMinutes();
+
+        if(sekundy<10)
+            sekundy = "0" + sekundy;
+        
+        if(minuty<10)
+            minuty = "0" + minuty;
+        
+        if(godziny<10)
+            godziny = "0" + godziny;
+        
+
+        timer = document.getElementById("clock");
+        timer.innerHTML = godziny + ":" + minuty + ":" + sekundy
+
+    }
+    czas();
+    setInterval(czas, 1000);
+    
+    
+</script>
+
+</body>
+</html>

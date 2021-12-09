@@ -1,0 +1,144 @@
+body{
+    background-color:rgb(53, 53, 53)
+}
+#container{
+    margin-top:70px;
+    width:1000px;
+    height:650px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#header{
+    width:1000x;
+    height:80px;
+    padding:20px;
+    
+}
+#logo{
+    width:400px;
+    height:15px;
+    padding:20px;
+    float:left;
+    text-align:center;
+    font-weight:bold;
+    font-size:30px;
+    margin-top:20px;
+    color:rgb(18, 106, 174);
+    
+}
+#clock{
+    width:200px;
+    height:15px;
+    padding:20px;
+    float:left;
+    margin-left:120px;
+    text-align: center;
+    font-weight:bold;
+    font-size:30px;
+    margin-top:20px;
+    color:rgb(18, 106, 174);
+}
+#mid1{
+    float:left;
+    width:442.5px;
+    height:350px;
+   
+    margin-left:30px;
+    
+}
+#mid2{
+    float:left;
+    width:442.5px;
+    height:350px;
+    
+}
+#title{
+    float:left;
+    border:solid black;
+    width:185px;
+    height:80px;
+    margin:15px;
+    background-color: rgb(18, 106, 174);
+}
+#title1{
+    clear:both;
+    float:left;
+    border:solid black;
+    width:185px;
+    height:80px;
+    margin:15px;
+    background-color:gold;
+
+}
+#title2{
+    float:left;
+    border:solid black;
+    width:185px;
+    height:80px;
+    margin:15px;
+    background-color: palegreen;
+
+}
+#title3{
+    float:left;
+    clear:both;
+    border:solid black;
+    width:406px;
+    height:80px;
+    margin:15px;
+    background-color:rgb(214, 131, 5);
+}
+#title4{
+    margin:15px;
+    width:406px;
+    height:197px;
+    border:solid black;
+    float:left;
+    background-color:rebeccapurple;
+}
+#yt{
+    margin:15px;
+    border:solid black;
+    width:74px;
+    height:80px;
+    float:left;
+    background-color:red;
+
+}
+#fb{
+    margin:15px;
+    border:solid black;
+    width:74px;
+    height:80px;
+    float:left;
+    background-color:violet;
+
+}
+#g{
+    margin:15px;
+    border:solid black;
+    width:74px;
+    height:80px;
+    float:left;
+    background-color: wheat;
+
+}
+#tw{
+    margin:15px;
+    border:solid black;
+    width:74px;
+    height:80px;
+    float:left;
+    background-color:green;
+
+}
+#footer{
+    padding:15px;
+    float:left;
+    margin:15px;
+    width:935px;
+    height:40px;
+    font-size:30px;
+    text-align: center;
+    color:whitesmoke
+}
