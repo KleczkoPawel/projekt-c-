@@ -52,6 +52,8 @@
 		<Unit filename="BasicController.h" />
 		<Unit filename="Service.cpp" />
 		<Unit filename="Service.h" />
+		<Unit filename="Street_workout.cpp" />
+		<Unit filename="Street_workout.h" />
 		<Unit filename="addon.make" />
 		<Unit filename="main.cpp" />
 		<Unit filename="restapi.cbp" />

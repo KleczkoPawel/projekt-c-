@@ -8,13 +8,17 @@
 #include <cppconn/statement.h>
 #include "mysql_connection.h"
 #include <mysql.h>
+#include<cstring>
+
 
 using namespace std;
 using std::string;
 
+
 void Service::initRestOpHandlers() {
     _listener.support(methods::GET,std::bind(&Service::handleGet,this,std::placeholders::_1));
     _listener.support(methods::PUT,std::bind(&Service::handlePut,this,std::placeholders::_1));
+    _listener.support(methods::OPTIONS,std::bind(&Service::handle_options,this,std::placeholders::_1));
 }
 float Service::calculateSum() {
     float sum = 0;
@@ -76,11 +80,13 @@ void Service::handlePut(http_request message) {
         {
             MYSQL *connect;
             connect = mysql_init(NULL);
+
             if(!connect)
             {
                 puts("nie udalo sie1");
             }
             connect = mysql_real_connect(connect,"127.0.0.1","dbuser","1234","CLIENT_DB",0, NULL, 0);
+
 
             if(!connect)
             {
@@ -89,16 +95,48 @@ void Service::handlePut(http_request message) {
             else{
                 puts("connected to database ");
             }
-            mysql_query(connect,"INSERT INTO Logins (ClientName,ClientSecondName,ClientWeight,ClientPassword,ClientEmail,ClientHeight,ClientID,ClientSex,ClientAge) VALUES ('Siara','Siarzewski',3,'daawa','adwawdawdaad',4214,5,'aa',33)");
-            mysql_close(connect);
+
             json::value val = task.get();
-            int number = val[U("number")].as_number().to_int32();
-            numbers.push_back(number);
-            message.reply(status_codes::OK);
+
+            auto ClientName = val.at("ClientName").as_string () ;
+            auto ClientSecondName = val.at("ClientSecondName").as_string ();
+            auto ClientWeight = val.at("ClientWeight").as_string ();
+            auto ClientPassword = val.at("ClientPassword").as_string ();
+            auto ClientEmail = val.at("ClientEmail").as_string ();
+            auto ClientHeight = val.at("ClientHeight").as_string ();
+            auto ClientSex = val.at("ClientSex").as_string ();
+            auto ClientAge = val.at("ClientAge").as_string ();
+
+            string dane_str1 = "INSERT INTO Logins (ClientName,ClientSecondName,ClientWeight,ClientPassword,ClientEmail,ClientHeight,ClientSex,ClientAge)VALUES(";
+            string dane_str2 = '"'+ClientName+'"'+","+'"'+ClientSecondName+'"'+","+'"'+ClientWeight+'"'+","+'"'+ClientPassword+'"'+","+'"'+ClientEmail+'"'+","+'"'+ClientHeight+'"'+","+'"'+ClientSex+'"'+","+'"'+ClientAge+'"'+")";
+
+            mysql_query(connect,(dane_str1+dane_str2).c_str());
+            mysql_close(connect);
+            cout << "wpisano" << endl;
+            http_response response(status_codes::OK);
+            response.headers().add(U("Allow"), U("GET, PUT, OPTIONS"));
+            response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
+            response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
+            response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
+            message.reply(response);
         }
+
         catch(std::exception& e) {
-            message.reply(status_codes::BadRequest);
+            http_response response(status_codes::BadRequest);
+            response.headers().add(U("Allow"), U("GET, PUT, OPTIONS"));
+            response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
+            response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
+            response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
+            message.reply(response);
         }
     });
 }
-
+  void Service::handle_options(http_request message)
+  {
+    http_response response(status_codes::OK);
+    response.headers().add(U("Allow"), U("GET, POST, OPTIONS"));
+    response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
+    response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
+    response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
+    message.reply(response);
+  }

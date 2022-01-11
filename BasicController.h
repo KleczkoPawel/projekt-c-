@@ -25,6 +25,7 @@ class BasicController {
     http_listener _listener;
     private:
     uri_builder endpointBuilder;
+
 };
 
 #endif // BASICCONTROLER_H_INCLUDED
