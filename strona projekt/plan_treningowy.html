@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" ; href="css\plan_treningowy.css" ; type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="uplinks">
+        <a class="a" href="strona_glowna.html">
+            <p class="ph">Strona główna</p>
+        </a>
+        <a class="a" href="logowanie.html">
+            <p class="ph">Logowanie</p>
+        </a>
+        <a class="a" href="rejestracja.html">
+            <p class="ph">Rejestracja</p>
+        </a>
+    </div>
+    <div id="container">
+        <div id="container2">
+            <img src="jpg/z3.jpg" class="img2">
+            <div id="header">
+                <div id="logo">
+                    <p>UŁÓŻ SWÓJ WŁASNY PLAN TRENINGOWY</p>
+                </div>
+                <div id="clock">
+
+                </div>
+            </div>
+
+            <form name="myForm" id="myForm">
+                <div id="div_logowanie">
+
+                    <h1>Trening izometryczny:</h1>
+                    <div class="wybor">
+                        <input type="checkbox" name="izo" value="true" class="input_izo">
+                        <label class="text-log izometria" for="free">Tak</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="izo" value="false" class="input_izo">
+                        <label class="text-log" for="street">Nie</label><br>
+                    </div>
+                    <br>
+
+                    <h1>Format treningu:</h1>
+                    <div class="wybor">
+                        <input type="checkbox" name="rodzaj" value="free" class="input_format">
+                        <label class="text-log" for="free">Wolne ciężary</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="rodzaj" value="kalistenika" class="input_format">
+                        <label class="text-log" for="street">Kalistenika</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="rodzaj" value="crossfit" class="input_format">
+                        <label class="text-log" for="cross"> CrossFit</label>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="rodzaj" value="machin" class="input_format">
+                        <label class="text-log" for="machin"> Trening w oparciu o maszyny</label>
+                    </div>
+                    <br>
+
+                    <h1>Schemat treningu</h1>
+                    <div class="wybor">
+                        <input type="checkbox" name="schem" value="obw" class="input_schem">
+                        <label class="text-log" for="free">Trening obwodowy</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="schem" value="push_pull" class="input_schem">
+                        <label class="text-log izometria_block" for="street">Trenig typu push-pull</label><br>
+                    </div>
+                    <br>
+
+                    
+                    <h1>Cel treningu:</h1>
+                    <div class="wybor">
+                        <input type="checkbox" name="cel" value="masa" class="input_cel">
+                        <label class="text-log" for="free">Rozbudowa sylwetki</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="cel" value="sila" class="input_cel">
+                        <label class="text-log" for="street">Zwiększenie siły</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="cel" value="wytrzymalosc" class="input_cel">
+                        <label class="text-log" for="cross">Zwiekszenie wytrzymałości</label>
+                    </div>
+                    <br>
+         
+                    <h1>Poziom zaawansowania:</h1>
+                    <div class="wybor">
+                        <input type="checkbox" name="lvl" value="basic" class="input_lvl">
+                        <label class="text-log izometria_block" for="free">Początkujący</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="lvl" value="medium" class="input_lvl">
+                        <label class="text-log" for="street">Średni</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="lvl" value="advanced" class="input_lvl">
+                        <label class="text-log" for="cross">Wysoki</label>
+                    </div>
+                    <br>
+
+                    <h1>Okres trwania:</h1>
+                    <div class="wybor">
+                        <input type="checkbox" name="m" value="free" class="input_okres">
+                        <label class="text-log" for="free">1 miesiąc</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="m" value="street" class="input_okres">
+                        <label class="text-log" for="street">3 miesiące</label><br>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="m" value="cross" class="input_okres">
+                        <label class="text-log" for="cross">6 miesiący</label>
+                    </div>
+                    <div class="wybor">
+                        <input type="checkbox" name="m" value="machin" class="input_okres">
+                        <label class="text-log" for="machin">12 miesiący</label>
+                    </div>
+                    <br>
+                    <br>
+                    <button type="submit" id="button_zaloguj" onclick="requestREST()">Zatwierdź</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="footer">
+            <p> Created by Paweł Kleczko
+            <p>
+            <p>All rights reserved</p>
+        </div>
+    </div>
+
+    <script>
+        $('.input_okres').on('change', function () { $('.input_okres').not(this).prop('checked', false); });
+        $('.input_cel').on('change', function () { $('.input_cel').not(this).prop('checked', false); });
+        $('.input_schem').on('change', function () { $('.input_schem').not(this).prop('checked', false); });
+        $('.input_format').on('change', function () { $('.input_format').not(this).prop('checked', false); });
+        $('.input_izo').on('change', function () { $('.input_izo').not(this).prop('checked', false); });
+        $('.input_lvl').on('change', function () { $('.input_lvl').not(this).prop('checked', false); });
+
+        function czas() {
+            d = new Date();
+            sekundy = d.getSeconds();
+            godziny = d.getHours();
+            minuty = d.getMinutes();
+
+            if (sekundy < 10)
+                sekundy = "0" + sekundy;
+
+            if (minuty < 10)
+                minuty = "0" + minuty;
+
+            if (godziny < 10)
+                godziny = "0" + godziny;
+
+
+            timer = document.getElementById("clock");
+            timer.innerHTML = godziny + ":" + minuty + ":" + sekundy
+        }
+        czas();
+        setInterval(czas, 1000);
+
+        function requestREST(onSuccess/*callback with json response*/) {
+            var formData = {};
+            $.each($('form').serializeArray(), function () {
+                formData[this.name] = this.value;
+            });
+            myJSON = JSON.stringify(formData);
+            console.log(myJSON);
+            $.ajax({
+                type: "PUT",
+                url: "http://127.0.0.1:7070/api/",
+                data: myJSON,
+                timeout: 3000,
+                statusCode: {
+                    400: function (response) {
+                        alert('Not working!');
+                    },
+                    200: function (response) {
+                        var dzienI = response["Dzien I"];
+                        var dzienII = response["Dzien II"];
+                     
+                        localStorage.setItem("dzienI", JSON.stringify(dzienI));
+                        localStorage.setItem("dzienII", JSON.stringify(dzienII));
+                        window.location.replace("moj_plan.html");
+                    },
+                    0: function (response) {
+                        alert('Not working!');
+                    }
+                },
+                dataType: "json",
+                contentType: "application/json"
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

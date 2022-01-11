@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <link rel="stylesheet" ; href="css\moj_plan.css" ; type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="uplinks">
+        <a class="a" href="strona_glowna.html">
+            <p class="ph">Strona główna</p>
+        </a>
+        <a class="a" href="logowanie.html">
+            <p class="ph">Logowanie</p>
+        </a>
+        <a class="a" href="rejestracja.html">
+            <p class="ph">Rejestracja</p>
+        </a>
+    </div>
+    <div id="container">
+        <div id="container2">
+            <img src="jpg/z2.jpg" class="img2">
+            <div id="header">
+                <div id="logo">
+                    <p>TWÓJ PLAN TRENINGOWY :</p>
+                </div>
+                <div id="clock">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="trening_div">
+
+        </div>
+
+        <div id="footer">
+            <p> Created by Paweł Kleczko
+            <p>
+            <p>All rights reserved</p>
+        </div>
+    </div>
+    <script>
+
+        function czas() {
+            d = new Date();
+            sekundy = d.getSeconds();
+            godziny = d.getHours();
+            minuty = d.getMinutes();
+
+            if (sekundy < 10)
+                sekundy = "0" + sekundy;
+
+            if (minuty < 10)
+                minuty = "0" + minuty;
+
+            if (godziny < 10)
+                godziny = "0" + godziny;
+
+
+            timer = document.getElementById("clock");
+            timer.innerHTML = godziny + ":" + minuty + ":" + sekundy
+        }
+        czas();
+        setInterval(czas, 1000);
+
+        var dzienI = localStorage.getItem("dzienI");
+        var dzienII = localStorage.getItem("dzienII");
+        var plan_treningowy = JSON.parse(dzienI); // tablica jsonow 
+        var plan_treningowy2 = JSON.parse(dzienII);
+
+        document.getElementById("trening_div").insertAdjacentHTML("beforebegin","<h1> Dzień I :</h1>")
+        for(let x of plan_treningowy)
+        {
+            for (let y in x)
+            {
+               document.getElementById("trening_div").insertAdjacentHTML("beforebegin",'<p class="trening_print">'+x[y]+'</p>') ;
+            };          
+            
+        }
+
+        document.getElementById("trening_div").insertAdjacentHTML("beforebegin","<h1> Dzień II :</h1>")
+        for(let x of plan_treningowy2)
+        {
+            for (let y in x)
+            {
+               document.getElementById("trening_div").insertAdjacentHTML("beforebegin",'<p class="trening_print">'+x[y]+'</p>') ;
+            };          
+            
+        }
+    //     for (var i = 0; i < localStorage.getItem("plan").length; i++) {
+    //     document.getElementById("logo").insertAdjacentHTML("afterbegin","<p>"+data[element]+"</p>") ;
+    //      }
+    </script>
+
+</body>
+
+</html>

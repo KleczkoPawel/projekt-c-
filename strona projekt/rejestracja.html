@@ -1,77 +1,154 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-    <link rel="stylesheet"; href="css\body_rejestracja.css"; type="text/css" />
+    <link rel="stylesheet" ; href="css\body_rejestracja.css" ; type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
-<div id="container">
-    <div id="header">
-        <div id="logo">
-          ZAŁÓŻ KONTO I ZAMÓW DOPASOWANY POD SIEBIE PLAN TRENINGOWY
-        </div>
-        <div id="clock">
-
-        </div>
-
+    <div id="uplinks">
+        <a class="a" href="strona_glowna.html">
+            <p class="ph">Strona główna</p>
+        </a>
+        <a class="a" href="logowanie.html">
+            <p class="ph">Logowanie</p>
+        </a>
+        <a class="a" href="rejestracja.html">
+            <p class="ph">Rejestracja</p>
+        </a>
     </div>
-
-    <div id="mid">
-        <form action="wysylamy_w_pizdu.cpp">
-            <div id="div_logowanie">
-              <h1>Rejestracja</h1>
-              <hr>
-          
-              <label for="email" class="text-log"><b>E-mail</b></label>
-                <br>
-              <input type="text" placeholder="Wprowadź e-mail" name="email" id="email" required>
-              <hr>
-              <label for="psw" class="text-log"><b>Hasło</b></label>
-               <br>
-              <input type="password" placeholder="Wprowadź hasło" name="psw" id="psw" required>
-              <hr>
-              <br>
-              <label for="email" class="text-log"><b>Powtórz hasło</b></label>
-                <br>
-              <input type="password" placeholder="Powtórz hasło" name="psw" id="psw" required>
-              <hr>
-               <br>
-              <button type="submit" id="button_zaloguj">Zarejestruj</button>
+    <div id="container">
+        <div id="header">
+            <div id="logo">
+                ZAŁÓŻ KONTO I ZAMÓW DOPASOWANY POD SIEBIE PLAN TRENINGOWY
             </div>
-        
-          </form>
+            <div id="clock">
+
+            </div>
+
+        </div>
+
+        <div id="mid">
+            <form name="myForm" id="myForm">
+                <div id="div_logowanie">
+                    <h1>Rejestracja</h1>
+                    <hr>
+
+                    <label for="ClientName" class="text-log"><b>Imię</b></label>
+                    <br>
+                    <input type="text" placeholder="Imie" name="ClientName" equired>
+                    <hr>
+
+                    <label for="ClientSecondName" class="text-log"><b>Nazwisko</b></label>
+                    <br>
+                    <input type="text" placeholder="Nazwisko" name="ClientSecondName" required>
+                    <hr>
+
+                    <label for="ClientHeight" class="text-log"><b>Wzrost</b></label>
+                    <br>
+                    <input type="number" placeholder="Wprowadź swój wzrost" name="ClientHeight" required>
+                    <hr>
+                    <br>
+
+                    <label for="ClientWeight" class="text-log"><b>Waga</b></label>
+                    <br>
+                    <input type="number" placeholder="Wprowadź swoją wagę" name="ClientWeight" required>
+                    <hr>
+                    <br>
+
+                    <label for="ClientSex" class="text-log"><b>Płeć</b></label>
+                    <br>
+
+                    <input type="radio" placeholder="płeć" name="ClientSex" id="ClientSex" value="man" required>
+                    <label for="ClientSex" class="text-log"><b>Mężczyzna</b></label><br>
+                    <input type="radio" placeholder="płeć" name="ClientSex" id="ClientSex" value="woman" required>
+                    <label for="ClientSex" class="text-log"><b>Kobieta</b></label><br>
+                    <hr>
+                    <br>
+
+                    <label for="ClientAge" class="text-log"><b>wiek</b></label>
+                    <br>
+                    <input type="number" placeholder="wiek" name="ClientAge" id="ClientAge" required>
+                    <hr>
+                    <br>
+
+                    <label for="ClientEmail" class="text-log"><b>E-mail</b></label>
+                    <br>
+                    <input type="text" placeholder="Wprowadź e-mail" name="ClientEmail" id="ClientEmail" required>
+                    <hr>
+
+                    <label for="ClientPassword" class="text-log"><b>Hasło</b></label>
+                    <br>
+                    <input type="password" placeholder="Wprowadź hasło" name="ClientPassword" required>
+                    <hr>
+                    <br>
+
+                    <button type="submit" id="button_zaloguj" onclick="requestREST()">Zarejestruj</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div id="footer">
+            <p> Created by Paweł Kleczko
+            <p>
+            <p>All rights reserved</p>
+        </div>
     </div>
 
-    <div id="footer">
+    <script>
+        function czas() {
+            d = new Date();
+            sekundy = d.getSeconds();
+            godziny = d.getHours();
+            minuty = d.getMinutes();
 
-    </div>
-</div>
+            if (sekundy < 10)
+                sekundy = "0" + sekundy;
 
-<script>
-    function czas() {
-        d = new Date();
-        sekundy = d.getSeconds();
-        godziny = d.getHours();
-        minuty = d.getMinutes();
+            if (minuty < 10)
+                minuty = "0" + minuty;
 
-        if(sekundy<10)
-            sekundy = "0" + sekundy;
-        
-        if(minuty<10)
-            minuty = "0" + minuty;
-        
-        if(godziny<10)
-            godziny = "0" + godziny;
-        
+            if (godziny < 10)
+                godziny = "0" + godziny;
 
-        timer = document.getElementById("clock");
-        timer.innerHTML = godziny + ":" + minuty + ":" + sekundy
 
-    }
-    czas();
-    setInterval(czas, 1000);
-    
-    
-</script>
+            timer = document.getElementById("clock");
+            timer.innerHTML = godziny + ":" + minuty + ":" + sekundy
+        }
+        czas();
+        setInterval(czas, 1000);
+
+        function requestREST(onSuccess/*callback with json response*/) {
+            var formData = {};
+            $.each($('form').serializeArray(), function () {
+                formData[this.name] = this.value;
+            });
+            myJSON = JSON.stringify(formData);
+            console.log(myJSON);
+            $.ajax({
+                type: "PUT",
+                url: "http://127.0.0.1:8080/api/",
+                data: myJSON,
+                success: function (response) {
+                    onSuccess(response);
+                },
+                timeout: 3000,
+                statusCode: {
+                    400: function (response) {
+                        alert('Not working!');
+                    },
+                    0: function (response) {
+                        alert('Not working!');
+                    }
+                },
+                dataType: "json",
+                contentType: "application/json"
+            });
+        }
+    </script>
 
 </body>
+
 </html>

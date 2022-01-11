@@ -1,0 +1,136 @@
+body{
+    background-color:rgba(240, 240, 240, 0.753);
+}
+#container{
+    margin-top:70px;
+    width:1000px;
+    height:650px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#header{
+    width:1000x;
+    height:80px;
+    padding:20px;
+    
+}
+#logo{
+    width:600px;
+    height:15px;
+    padding:20px;
+    float:left;
+    text-align:center;
+    font-weight:bold;
+    font-size:30px;
+    margin-top:20px;
+    color:rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+#clock{
+    width:200px;
+    height:15px;
+    padding:20px;
+    float:left;
+    margin-left:80%;
+    text-align: center;
+    font-weight:bold;
+    font-size:40px;
+    margin-top:10px;
+    color:black;
+}
+#mid{
+
+    width:1000px ;
+    height:400px;
+    margin-top:120px;
+    background-image: url("jpg/click.png");
+    
+}
+
+#title{
+    float:left;
+    border:solid black;
+    width:185px;
+    height:80px;
+    margin:15px;
+    background-color: rgb(18, 174, 39);
+    
+}
+
+#footer{
+    padding:15px;
+    float:left;
+    margin:15px;
+    margin-top: 90px;
+    width:935px;
+    height:130px;
+    text-align: center;
+    font-size: 12px;
+}
+#button_zaloguj{
+    margin-left: 50px;
+    width: 120px;
+    height: 30px;
+    float: left;
+}
+
+input[type=text], input[type=password] {
+    width: 40%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: rgba(219, 219, 219, 0.829);
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: rgb(192, 192, 192);
+    outline: none;
+  }
+  .text-log{
+      font-size: 20px;
+  }
+
+  .ph{
+      font-size: 25px;
+      padding: 15px;
+      margin: 50px 100px 30px 0;
+      display: inline-block;
+      font-weight: bold;
+  }
+  #uplinks{
+    text-align: center;
+  }
+  .a{
+      text-decoration: none;
+      color:black;
+  }
+  .fmid{
+      background-color:rgb(238, 149, 149);
+      display: inline-block;
+      width: 210px;
+      height: 200px;
+      margin: 15px;
+      text-align: center;
+      font-weight: bolder;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      border-radius: 30px
+  }
+  .img{
+    width: 210px;
+    height: 130px;
+  }
+  .img2{
+    width: 100%;
+    height: 50%;
+  }
+  #container2{
+    text-align: center;
+  }
+  .trening_print{
+      font-size: 20px;
+  }
+  #trening_div{
+      
+  }
