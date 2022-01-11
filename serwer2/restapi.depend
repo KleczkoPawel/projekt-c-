@@ -1,0 +1,290 @@
+# depslib dependency file v1.0
+1636975951 source:/home/pawlos/Pulpit/api/restapi/BasicController.cpp
+	"BasicController.h"
+
+1636570315 /home/pawlos/Pulpit/api/restapi/BasicController.h
+	<cpprest/http_listener.h>
+	<pplx/pplxtasks.h>
+	<string>
+	<cpprest/http_msg.h>
+
+1637692522 source:/home/pawlos/Pulpit/api/restapi/main.cpp
+	<iostream>
+	"Service.h"
+
+1636984925 /home/pawlos/Pulpit/api/restapi/Service.h
+	"BasicController.h"
+	<vector>
+
+1637696441 source:/home/pawlos/Pulpit/api/restapi/Service.cpp
+	"Service.h"
+	"daokakao.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+	"mysql_connection.h"
+
+1637696218 source:/home/pawlos/Pulpit/api/restapi/daokakao.cpp
+	"daokakao.h"
+	<string>
+	"mysql_connection.h"
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+	"mysql_connection.h"
+
+1637696286 /home/pawlos/Pulpit/api/restapi/daokakao.h
+	<string>
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	"mysql_connection.h"
+	<cppconn/statement.h>
+
+1636975951 source:/home/pawlos/Pulpit/restapi/BasicController.cpp
+	"BasicController.h"
+
+1641585116 /home/pawlos/Pulpit/restapi/BasicController.h
+	<cpprest/http_listener.h>
+	<pplx/pplxtasks.h>
+	<string>
+	<cpprest/http_msg.h>
+
+1638988457 source:/home/pawlos/Pulpit/restapi/daokakao.cpp
+	"daokakao.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+	"mysql_connection.h"
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+	"mysql_connection.h"
+
+1638988451 /home/pawlos/Pulpit/restapi/daokakao.h
+	<string>
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	"mysql_connection.h"
+	<cppconn/statement.h>
+
+1641675178 source:/home/pawlos/Pulpit/restapi/main.cpp
+	<iostream>
+	"Service.h"
+
+1641585284 /home/pawlos/Pulpit/restapi/Service.h
+	"BasicController.h"
+	"Street_workout.h"
+	<vector>
+
+1641321329 source:/home/pawlos/Pulpit/restapi/Service.cpp
+	"Service.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+	"mysql_connection.h"
+	<mysql.h>
+	<cstring>
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/mysql.h
+	<stdbool.h>
+	<stddef.h>
+	<stdint.h>
+	<sys/types.h>
+	<windows.h>
+	<winsock2.h>
+	"field_types.h"
+	"my_list.h"
+	"mysql_com.h"
+	"mysql/client_plugin.h"
+	"mysql_version.h"
+	"mysql_time.h"
+	"errmsg.h"
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/field_types.h
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/my_list.h
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/mysql_com.h
+	<stdbool.h>
+	<stdint.h>
+	"my_command.h"
+	"my_compress.h"
+	"my_io.h"
+	"mysql/components/services/my_io_bits.h"
+	<stdbool.h>
+	"mysql/udf_registration_types.h"
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/my_command.h
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/my_compress.h
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/mysql/udf_registration_types.h
+	<stdbool.h>
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/mysql/client_plugin.h
+	<stdarg.h>
+	<stdlib.h>
+	"plugin_auth_common.h"
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/mysql/plugin_auth_common.h
+	<windows.h>
+
+1632836802 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/mysql_version.h
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/mysql_time.h
+
+1632829594 /home/pawlos/Pulpit/libka2/mysql-8.0.27-linux-glibc2.17-x86_64-minimal/include/errmsg.h
+
+1641672437 /home/pawlos/Pulpit/restapi/Street_workout.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Service.h"
+	<stdlib.h>
+
+1641669365 source:/home/pawlos/Pulpit/restapi/Street_workout.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Street_workout.h"
+	"Service.h"
+
+1636975951 source:/home/pawlos/Pulpit/restapi22/BasicController.cpp
+	"BasicController.h"
+
+1641585116 /home/pawlos/Pulpit/restapi22/BasicController.h
+	<cpprest/http_listener.h>
+	<pplx/pplxtasks.h>
+	<string>
+	<cpprest/http_msg.h>
+
+1641839464 source:/home/pawlos/Pulpit/restapi22/Service.cpp
+	"Service.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+	"mysql_connection.h"
+	<mysql.h>
+	<cstring>
+	"Street_workout.h"
+	"Silownia_free.h"
+
+1641585284 /home/pawlos/Pulpit/restapi22/Service.h
+	"BasicController.h"
+	"Street_workout.h"
+	<vector>
+
+1641904787 /home/pawlos/Pulpit/restapi22/Street_workout.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Service.h"
+	<stdlib.h>
+
+1641904818 source:/home/pawlos/Pulpit/restapi22/Street_workout.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Street_workout.h"
+	"Service.h"
+
+1641744348 source:/home/pawlos/Pulpit/restapi22/main.cpp
+	<iostream>
+	"Service.h"
+
+1641839845 /home/pawlos/Pulpit/restapi22/Silownia_free.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Service.h"
+	<stdlib.h>
+
+1641839814 source:/home/pawlos/Pulpit/restapi22/Silownia_free.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Silownia_free.h"
+	"Service.h"
+
+1636975951 source:/home/pawlos/Pulpit/serwer2/BasicController.cpp
+	"BasicController.h"
+
+1641585116 /home/pawlos/Pulpit/serwer2/BasicController.h
+	<cpprest/http_listener.h>
+	<pplx/pplxtasks.h>
+	<string>
+	<cpprest/http_msg.h>
+
+1641744348 source:/home/pawlos/Pulpit/serwer2/main.cpp
+	<iostream>
+	"Service.h"
+
+1641585284 /home/pawlos/Pulpit/serwer2/Service.h
+	"BasicController.h"
+	"Street_workout.h"
+	<vector>
+
+1641904787 /home/pawlos/Pulpit/serwer2/Street_workout.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Service.h"
+	<stdlib.h>
+
+1641839464 source:/home/pawlos/Pulpit/serwer2/Service.cpp
+	"Service.h"
+	<string>
+	<stdlib.h>
+	<iostream>
+	<cppconn/driver.h>
+	<cppconn/exception.h>
+	<cppconn/resultset.h>
+	<cppconn/statement.h>
+	"mysql_connection.h"
+	<mysql.h>
+	<cstring>
+	"Street_workout.h"
+	"Silownia_free.h"
+
+1641839845 /home/pawlos/Pulpit/serwer2/Silownia_free.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Service.h"
+	<stdlib.h>
+
+1641839814 source:/home/pawlos/Pulpit/serwer2/Silownia_free.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Silownia_free.h"
+	"Service.h"
+
+1641905032 source:/home/pawlos/Pulpit/serwer2/Street_workout.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Street_workout.h"
+	"Service.h"
+
