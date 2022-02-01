@@ -50,10 +50,14 @@
 		</Linker>
 		<Unit filename="BasicController.cpp" />
 		<Unit filename="BasicController.h" />
+		<Unit filename="Crossfit.cpp" />
+		<Unit filename="Crossfit.h" />
 		<Unit filename="Service.cpp" />
 		<Unit filename="Service.h" />
 		<Unit filename="Silownia_free.cpp" />
 		<Unit filename="Silownia_free.h" />
+		<Unit filename="Silownia_machine.cpp" />
+		<Unit filename="Silownia_machine.h" />
 		<Unit filename="Street_workout.cpp" />
 		<Unit filename="Street_workout.h" />
 		<Unit filename="addon.make" />

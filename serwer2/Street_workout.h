@@ -25,8 +25,8 @@ private:
     string schem;
 
     std::map <string, string> is_isometric {{"medium","medium_izometria"},{"advanced","advanced_izometria"}};
-    std::map <string, string> cel_treningu {{"sila","x6 powtórzeń"},{"masa","serie x9 powtórzeń"},{"wytrzymalosc","wykonujemy 4 obwody po 12 powtórzeń"}};
-     std::map <string, string> serie_treningu {{"obw"," | 4 serie "},{"push_pull"," | 2 serie "}};
+    std::map <string, string> cel_treningu {{"sila","x6 powtórzeń"},{"masa","serie x9 powtórzeń"},{"wytrzymalosc","wykonujemy 4 obwody po 12 powtórzeń na ćwiczenie"}};
+    std::map <string, string> serie_treningu {{"obw"," | 4 serie "},{"push_pull"," | 2 serie "}};
 
     vector <string> klatka_basic  = {"pompki z rękami na podwyższeniu","pompki szwedzkie"};
     vector <string> klatka_medium = {"pompki na poręczach","pompki klasyczne"};

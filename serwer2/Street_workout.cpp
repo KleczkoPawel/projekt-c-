@@ -23,24 +23,39 @@ void Street_workout::trening_creator()
             {
                 string str_trening = is_isometric[poziom];
                 trening = trening_map[str_trening];
-                powtorzenia= " ";
-                serie = " ";
             }
 
         else
             {
                 trening  = trening_map[poziom];
-                powtorzenia = cel_treningu[cel];
-                serie = serie_treningu[schem];
             }
 
+        powtorzenia = cel_treningu[cel];
+        serie = serie_treningu[schem];
 
 
+        if(schem == "obw" and cel=="wytrzymalosc")
+        {
+            json::value serie_i_powtorzenia;
+            serie_i_powtorzenia["obwod"] = json::value::string(cel_treningu[cel]);
+            jsonPlan_treningowyI.push_back(serie_i_powtorzenia);
+            jsonPlan_treningowyII.push_back(serie_i_powtorzenia);
 
-        if(izometria == "true" or schem == "obw")
+            for(auto mapIt = begin(trening); mapIt != end(trening); ++mapIt)
+            {
+                json::value cwiczenie_dzienI;
+                json::value cwiczenie_dzienII;
+                cwiczenie_dzienI[mapIt->first] = json::value::string(mapIt->second[0]);
+                cwiczenie_dzienII[mapIt->first] = json::value::string(mapIt->second[1]);
+                jsonPlan_treningowyI.push_back(cwiczenie_dzienI);
+                jsonPlan_treningowyII.push_back(cwiczenie_dzienII);
+            }
+        }
+
+        else if(schem == "obw" and cel!="wytrzymalosc")
         {
 
-                for(auto mapIt = begin(trening); mapIt != end(trening); ++mapIt)
+            for(auto mapIt = begin(trening); mapIt != end(trening); ++mapIt)
             {
                 json::value cwiczenie_dzienI;
                 json::value cwiczenie_dzienII;
@@ -49,6 +64,7 @@ void Street_workout::trening_creator()
                 jsonPlan_treningowyI.push_back(cwiczenie_dzienI);
                 jsonPlan_treningowyII.push_back(cwiczenie_dzienII);
             }
+
         }
 
         else // push-pull
@@ -57,7 +73,7 @@ void Street_workout::trening_creator()
             {
 
                   int i = 1;
-                    for(auto mapIt = begin(trening); mapIt != std::prev(end(trening)); ++mapIt)
+                    for(auto mapIt = begin(trening); mapIt != std::prev(end(trening)); ++mapIt)// prev(prev)
                 {
                     json::value cwiczenie_dzienI;
                     json::value cwiczenie_dzienII;

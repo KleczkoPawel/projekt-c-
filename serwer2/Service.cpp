@@ -11,6 +11,8 @@
 #include <cstring>
 #include "Street_workout.h"
 #include "Silownia_free.h"
+#include "Silownia_machine.h"
+#include "Crossfit.h"
 
 
 using namespace std;
@@ -88,24 +90,70 @@ void Service::handlePut(http_request message) {
             string poziom = val.at("lvl").as_string();
             string schem = val.at("schem").as_string();
 
-            Street_workout plan_treningowy(cel,izometryczny,poziom,schem);
+            if (rodzaj == "kalistenika")
+            {
+                Street_workout plan_treningowy(cel,izometryczny,poziom,schem);
+                plan_treningowy.trening_creator();
 
-            cout << "linia 91" << endl;
-            plan_treningowy.trening_creator();
+                http_response response(status_codes::OK);
 
-            http_response response(status_codes::OK);
+                response.headers().add(U("Allow"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
+                response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
 
-            response.headers().add(U("Allow"), U("GET, PUT, OPTIONS"));
-            response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
-            response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
-            response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
+                response.set_body(plan_treningowy.generatedPlan);
 
-            response.set_body(plan_treningowy.generatedPlan);
+                message.reply(response);
+            }
+            else if (rodzaj == "silownia_free")
+            {
+                Silownia_free plan_treningowy(cel,izometryczny,poziom,schem);
+                plan_treningowy.trening_creator();
 
-            cout << typeid(plan_treningowy.generatedPlan).name();
-            message.reply(response);
+                http_response response(status_codes::OK);
 
+                response.headers().add(U("Allow"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
+                response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
 
+                response.set_body(plan_treningowy.generatedPlan);
+
+                message.reply(response);
+            }
+            else if (rodzaj == "silownia_machin")
+            {
+                Silownia_machine plan_treningowy(cel,izometryczny,poziom,schem);
+                plan_treningowy.trening_creator();
+
+                http_response response(status_codes::OK);
+
+                response.headers().add(U("Allow"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
+                response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
+
+                response.set_body(plan_treningowy.generatedPlan);
+
+                message.reply(response);
+            }
+            else
+            {
+                Crossfit plan_treningowy(cel,izometryczny,poziom,schem);
+                plan_treningowy.trening_creator();
+
+                http_response response(status_codes::OK);
+
+                response.headers().add(U("Allow"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Origin"), U("*"));
+                response.headers().add(U("Access-Control-Allow-Methods"), U("GET, PUT, OPTIONS"));
+                response.headers().add(U("Access-Control-Allow-Headers"), U("Content-Type"));
+
+                response.set_body(plan_treningowy.generatedPlan);
+
+                message.reply(response);
+            }
         }
 
         catch(std::exception& e) {

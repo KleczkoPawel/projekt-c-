@@ -243,7 +243,7 @@
 	"Street_workout.h"
 	<vector>
 
-1641904787 /home/pawlos/Pulpit/serwer2/Street_workout.h
+1643047246 /home/pawlos/Pulpit/serwer2/Street_workout.h
 	<iostream>
 	<string>
 	<vector>
@@ -251,7 +251,7 @@
 	"Service.h"
 	<stdlib.h>
 
-1641839464 source:/home/pawlos/Pulpit/serwer2/Service.cpp
+1643676168 source:/home/pawlos/Pulpit/serwer2/Service.cpp
 	"Service.h"
 	<string>
 	<stdlib.h>
@@ -265,8 +265,10 @@
 	<cstring>
 	"Street_workout.h"
 	"Silownia_free.h"
+	"Silownia_machine.h"
+	"Crossfit.h"
 
-1641839845 /home/pawlos/Pulpit/serwer2/Silownia_free.h
+1643643303 /home/pawlos/Pulpit/serwer2/Silownia_free.h
 	<iostream>
 	<string>
 	<vector>
@@ -274,17 +276,40 @@
 	"Service.h"
 	<stdlib.h>
 
-1641839814 source:/home/pawlos/Pulpit/serwer2/Silownia_free.cpp
+1643643144 source:/home/pawlos/Pulpit/serwer2/Silownia_free.cpp
 	<iostream>
 	<string>
 	<vector>
 	"Silownia_free.h"
 	"Service.h"
 
-1641905032 source:/home/pawlos/Pulpit/serwer2/Street_workout.cpp
+1643640489 source:/home/pawlos/Pulpit/serwer2/Street_workout.cpp
 	<iostream>
 	<string>
 	<vector>
 	"Street_workout.h"
+	"Service.h"
+
+1643675934 /home/pawlos/Pulpit/serwer2/Silownia_machine.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Service.h"
+	<stdlib.h>
+
+1643681547 /home/pawlos/Pulpit/serwer2/Crossfit.h
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	"Service.h"
+	<stdlib.h>
+
+1643645468 source:/home/pawlos/Pulpit/serwer2/Silownia_machine.cpp
+	<iostream>
+	<string>
+	<vector>
+	"Silownia_machine.h"
 	"Service.h"
 
